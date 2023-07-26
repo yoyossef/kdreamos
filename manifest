@@ -24,6 +24,7 @@ export PACKAGES="\
 	bluez-utils \
 	cifs-utils \
 	diffutils \
+	distrobox \
 	dmidecode \
 	dosbox \
 	eog \
