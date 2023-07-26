@@ -7,7 +7,7 @@ env:
 on:
   push:
     branches:
-      - master
+      - plasma-unstable
   workflow_dispatch:
 
 jobs:
@@ -89,7 +89,7 @@ jobs:
      - build-docker-image
      - aur-pkgbuild
      - pkgbuild
-    name: Build ChimeraOS UNSTABLE image
+    name: Build KhimeraOS UNSTABLE image
     uses: ./.github/workflows/build-system-image.yml
     with:
       postfix: "[UNSTABLE]"
