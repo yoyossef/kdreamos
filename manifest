@@ -1,14 +1,14 @@
 #! /bin/bash
 
 export VERSION="43-2"
-export SYSTEM_DESC="ChimeraOS"
-export SYSTEM_NAME="chimeraos"
+export SYSTEM_DESC="KhimeraOS"
+export SYSTEM_NAME="khimeraos"
 export USERNAME="gamer"
 export SIZE="10000MB"
 export ARCHIVE_DATE=$(date -d 'yesterday' +%Y/%m/%d)
 export WEBSITE="https://chimeraos.org"
 export DOCUMENTATION_URL="https://chimeraos.org/about"
-export BUG_REPORT_URL="https://github.com/ChimeraOS/chimeraos/issues"
+export BUG_REPORT_URL="https://github.com/elril0000/khimeraos/issues"
 
 export KERNEL_PACKAGE="linux-chimeraos"
 export KERNEL_PACKAGE_ORIGIN="local"
