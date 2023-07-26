@@ -2,8 +2,6 @@ FROM archlinux:base-devel
 LABEL contributor="shadowapex@gmail.com"
 COPY rootfs/etc/pacman.conf /etc/pacman.conf
 RUN echo -e "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.conf && \
-    pacman-key --init && \
-    pacman-key --recv-keys  A31B6BD72486CFD6 && \
     pacman --noconfirm -Syyuu && \
     pacman --noconfirm -S \
     arch-install-scripts \
@@ -30,9 +28,6 @@ RUN echo -e "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.con
 # Add a fake systemd-run script to workaround pikaur requirement.
 RUN echo -e "#!/bin/bash\nif [[ \"$1\" == \"--version\" ]]; then echo 'fake 244 version'; fi\nmkdir -p /var/cache/pikaur\n" >> /usr/bin/systemd-run && \
     chmod +x /usr/bin/systemd-run
-
-# substitute check with !check to avoid running software from AUR in the build machine
-RUN sed -i -e 's/BUILDENV=(!distcc color !ccache check !sign)/BUILDENV=(!distcc color !ccache !check !sign)/g' /etc/makepkg.conf
 
 COPY manifest /manifest
 # Freeze packages and overwrite with overrides when needed

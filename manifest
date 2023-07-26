@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export VERSION="44"
+export VERSION="43-2"
 export SYSTEM_DESC="ChimeraOS"
 export SYSTEM_NAME="chimeraos"
 export USERNAME="gamer"
@@ -17,6 +17,7 @@ export PACKAGES="\
 	accountsservice \
 	alsa-firmware \
 	alsa-utils \
+	amd-ucode \
 	bluez \
 	bluez-hid2hci \
 	bluez-plugins \
@@ -38,7 +39,6 @@ export PACKAGES="\
 	fmt \
 	fuse-zip \
 	fuse2 \
-	fwupd \
 	gamemode \
 	git \
 	gnome-console \
@@ -66,12 +66,15 @@ export PACKAGES="\
 	lib32-libxcrypt-compat \
 	lib32-libva \
 	lib32-libva-intel-driver \
+	lib32-libva-mesa-driver \
 	lib32-libva-vdpau-driver \
-	lib32-nvidia-utils \
+	lib32-mesa \
+	lib32-mesa-vdpau \
 	lib32-openal \
-	lib32-pipewire \
 	lib32-systemd \
 	lib32-vulkan-icd-loader \
+	lib32-vulkan-intel \
+	lib32-vulkan-radeon \
 	libcurl-gnutls \
 	libidn11 \
 	libretro-beetle-pce-fast \
@@ -91,6 +94,7 @@ export PACKAGES="\
 	libretro-ppsspp \
 	libretro-snes9x \
 	libva-intel-driver \
+	libva-mesa-driver \
 	libva-vdpau-driver \
 	libxcrypt-compat \
 	libxss \
@@ -98,22 +102,16 @@ export PACKAGES="\
 	liquidctl \
 	logrotate \
 	lshw \
+	mesa \
 	mesa-demos \
-	modemmanager \
+	mesa-vdpau \
 	nano \
 	nautilus \
 	networkmanager \
 	nfs-utils \
 	nss-mdns \
-	nvidia-dkms \
-	nvidia-prime \
-	nvidia-utils \
 	openal \
 	openssh \
-	pipewire \
-	pipewire-alsa \
-	pipewire-jack \
-	pipewire-pulse \
 	podman \
 	pulsemixer \
 	python \
@@ -131,6 +129,8 @@ export PACKAGES="\
 	usbutils \
 	vim \
 	vulkan-icd-loader \
+	vulkan-intel \
+	vulkan-radeon \
 	wavpack \
 	wget \
 	which \
@@ -145,19 +145,13 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.4.5-chos5-1/linux-chimeraos-6.4.5.chos5-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.4.5-chos5-1/linux-chimeraos-headers-6.4.5.chos5-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.3.9-chos2/linux-chimeraos-6.3.9.chos2-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.3.9-chos2/linux-chimeraos-headers-6.3.9.chos2-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/lib32-libva-mesa-driver-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/lib32-mesa-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/lib32-mesa-vdpau-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/lib32-vulkan-intel-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/lib32-vulkan-radeon-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/libva-mesa-driver-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/mesa-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/mesa-vdpau-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/vulkan-intel-23.1.4.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.4-chos1-2/vulkan-radeon-23.1.4.chos1-2-x86_64.pkg.tar.zst \
+	https://archive.archlinux.org/repos/2023/06/07/extra/os/x86_64/nvidia-dkms-530.41.03-1-x86_64.pkg.tar.zst \
+	https://archive.archlinux.org/repos/2023/06/07/extra/os/x86_64/nvidia-utils-530.41.03-1-x86_64.pkg.tar.zst \
+	https://archive.archlinux.org/repos/2023/06/07/multilib/os/x86_64/lib32-nvidia-utils-530.41.03-1-x86_64.pkg.tar.zst \
+	https://archive.archlinux.org/repos/2023/06/07/extra/os/x86_64/nvidia-prime-1.0-4-any.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -165,7 +159,6 @@ export PACKAGE_OVERRIDES="\
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
 	ayaled \
-	asus-cirrus-firmware-git \
 	bcm20702a1-firmware \
 	boxtron \
 	chimera \
@@ -187,6 +180,7 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	opengamepadui-bin \
 	opengamepadui-session-git \
+	oxp-sensors-dkms-git \
 	pikaur \
 	python-vdf \
 	r8152-dkms \
@@ -197,7 +191,6 @@ export AUR_PACKAGES="\
 	rtl8821au-dkms-git \
 	rtw89-dkms-git \
 	ryzenadj-git \
-	ryzenadj-controller-git \
 	rz608-fix-git \
 	steam-removable-media-git \
 	wyvern \
@@ -216,7 +209,6 @@ export SERVICES="\
 	handycon \
 	haveged \
 	lightdm \
-	ryzenadj-controller \
 	sshd \
 	systemd-timesyncd \
 "
@@ -224,7 +216,6 @@ export SERVICES="\
 export USER_SERVICES="\
 	chimera.service \
 	gamemoded.service \
-	ryzen-tctl \
 	steam-patch.service \
 "
 
