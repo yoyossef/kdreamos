@@ -22,10 +22,8 @@ export PACKAGES="\
 	bluez-hid2hci \
 	bluez-plugins \
 	bluez-utils \
-	broadcom-wl-dkms \
 	cifs-utils \
 	diffutils \
-	dkms \
 	dmidecode \
 	dosbox \
 	eog \
@@ -52,10 +50,6 @@ export PACKAGES="\
 	gst-plugin-pipewire \
 	haveged \
 	htop \
-	intel-gpu-tools \
-	intel-media-driver \
-	intel-ucode \
-	intel-undervolt \
 	lib32-curl \
 	lib32-fontconfig \
 	lib32-freetype2 \
@@ -65,15 +59,12 @@ export PACKAGES="\
 	lib32-libxinerama \
 	lib32-libxcrypt-compat \
 	lib32-libva \
-	lib32-libva-intel-driver \
 	lib32-libva-mesa-driver \
-	lib32-libva-vdpau-driver \
 	lib32-mesa \
 	lib32-mesa-vdpau \
 	lib32-openal \
 	lib32-systemd \
 	lib32-vulkan-icd-loader \
-	lib32-vulkan-intel \
 	lib32-vulkan-radeon \
 	libcurl-gnutls \
 	libidn11 \
@@ -86,16 +77,14 @@ export PACKAGES="\
 	libretro-genesis-plus-gx \
 	libretro-kronos \
 	libretro-mame \
-	libretro-mesen-s\
+	libretro-mesen-s \
 	libretro-mgba \
 	libretro-mupen64plus-next \
 	libretro-nestopia \
 	libretro-picodrive \
 	libretro-ppsspp \
 	libretro-snes9x \
-	libva-intel-driver \
 	libva-mesa-driver \
-	libva-vdpau-driver \
 	libxcrypt-compat \
 	libxss \
 	lightdm \
@@ -130,7 +119,6 @@ export PACKAGES="\
 	usbutils \
 	vim \
 	vulkan-icd-loader \
-	vulkan-intel \
 	vulkan-radeon \
 	wavpack \
 	wget \
@@ -151,18 +139,12 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.3.9-chos2/linux-chimeraos-6.3.9.chos2-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.3.9-chos2/linux-chimeraos-headers-6.3.9.chos2-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/repos/2023/06/07/extra/os/x86_64/nvidia-dkms-530.41.03-1-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/repos/2023/06/07/extra/os/x86_64/nvidia-utils-530.41.03-1-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/repos/2023/06/07/multilib/os/x86_64/lib32-nvidia-utils-530.41.03-1-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/repos/2023/06/07/extra/os/x86_64/nvidia-prime-1.0-4-any.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
-	ayaled \
-	bcm20702a1-firmware \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
@@ -180,27 +162,16 @@ export AUR_PACKAGES="\
 	libretro-prosystem-git \
 	libretro-stella2014-git \
 	libretro-virtualjaguar-git \
-	kanit-font \
 	nintendo-udev \
 	opengamepadui-bin \
 	opengamepadui-session-git \
-	oxp-sensors-dkms-git \
 	pikaur \
 	python-vdf \
-	r8152-dkms \
 	retroarch-autoconfig-udev-git \
-	rtl8812au-dkms-git \
-	rtl8814au-dkms-git \
-	rtl88x2bu-dkms-git \
-	rtl8821au-dkms-git \
-	rtw89-dkms-git \
 	ryzenadj-git \
-	rz608-fix-git \
 	steam-removable-media-git \
 	vkbasalt \
 	wyvern \
-	xpad-noone-dkms \
-	xpadneo-dkms \
 "
 
 export SERVICES="\
@@ -260,10 +231,7 @@ postinstallhook() {
 	popd
 
 	# Remove build tools for slimmer image
-	rm /usr/share/libalpm/hooks/70-dkms-install.hook
-	rm /usr/share/libalpm/hooks/70-dkms-upgrade.hook
-	rm /usr/share/libalpm/hooks/71-dkms-remove.hook
-	pacman --noconfirm -Rnsdd make gcc dkms ${KERNEL_PACKAGE}-headers
+	pacman --noconfirm -Rnsdd ${KERNEL_PACKAGE}-headers
 
 	# remove dolphin standalone emulator files (only need /usr/share/dolphin-emu/sys)
 	rm /usr/bin/dolphin-emu
@@ -289,9 +257,4 @@ postinstallhook() {
 	# force -steamdeck option in desktop mode to prevent constant steam updates
 	sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /usr/share/applications/steam.desktop
 
-	# set permissions for intel_gpu_top and mangohud
-	setcap cap_perfmon=+ep /usr/bin/intel_gpu_top
-
-	# work around Nvidia causing delays in game startup on AMD
-	mv /usr/share/vulkan/icd.d/nvidia_icd.json /usr/share/vulkan/icd.d/nvidia_icd.json.disabled
 }
