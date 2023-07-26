@@ -5,7 +5,7 @@ on:
 
 jobs:
   createstable:
-    name: Create stable branch
+    name: Create stable branch - plasma
     runs-on: ubuntu-latest
 
     steps:
