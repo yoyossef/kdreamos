@@ -143,6 +143,8 @@ export PACKAGES="\
 	xdg-user-dirs-gtk \
 	xf86-video-amdgpu \
 	xorg-server \
+	zsh \
+	zsh-completions \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -242,6 +244,9 @@ postinstallhook() {
 	${USERNAME} ALL=(ALL) NOPASSWD: /usr/share/chimera/bin/power-tool
 	" > /etc/sudoers.d/chimera
 
+	# Set zsh as default shell
+	chsh -s /usr/bin/zsh $USERNAME
+	
 	# disable retroarch menu in joypad configs
 	find /usr/share/libretro/autoconfig -type f -name '*.cfg' | xargs -d '\n' sed -i '/input_menu_toggle_btn/d'
 
