@@ -156,6 +156,7 @@ export PACKAGES="\
 	sweeper \
 	telepathy-kde-meta \
 	ttf-liberation \
+	ttf-meslo-nerd \
 	unzip \
 	usb_modeswitch \
 	usbutils \
@@ -189,6 +190,7 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
+	beautyline \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
@@ -206,6 +208,7 @@ export AUR_PACKAGES="\
 	libretro-prosystem-git \
 	libretro-stella2014-git \
 	libretro-virtualjaguar-git \
+	lightly-boehs-git \
 	nintendo-udev \
 	opengamepadui-bin \
 	opengamepadui-session-git \
@@ -214,6 +217,7 @@ export AUR_PACKAGES="\
 	retroarch-autoconfig-udev-git \
 	ryzenadj-git \
 	steam-removable-media-git \
+	sweet-cursors-theme-git \
 	vkbasalt \
 	wyvern \
 "
@@ -261,6 +265,9 @@ postinstallhook() {
 	${USERNAME} ALL=(ALL) NOPASSWD: /usr/bin/chimera-session-use-sddm
 	${USERNAME} ALL=(ALL) NOPASSWD: /usr/share/chimera/bin/power-tool
 	" > /etc/sudoers.d/chimera
+
+	# Set Sweet-cursors and BeautyLine as default
+	sed 's/Inherits=Adwaita/Inherits=Sweet-cursors,BeautyLine,breeze/' -i /usr/share/icons/default/index.theme
 
 	# Set zsh as default shell
 	chsh -s /usr/bin/zsh $USERNAME
