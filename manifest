@@ -73,6 +73,7 @@ export PACKAGES="\
 	kopete \
 	korganizer \
 	krfb \
+	ksshaskpass \
 	ktimer \
 	kwalletmanager \
 	kweather \
@@ -236,6 +237,7 @@ export USER_SERVICES="\
 	chimera.service \
 	gamemoded.service \
 	steam-patch.service \
+	ssh-agent.service \
 "
 
 export FILES_TO_DELETE="\
@@ -262,6 +264,9 @@ postinstallhook() {
 
 	# Set zsh as default shell
 	chsh -s /usr/bin/zsh $USERNAME
+
+	# link ksshaskpass
+	ln -sv /usr/bin/ksshaskpass /usr/bin/ssh-askpass
 
 	# disable retroarch menu in joypad configs
 	find /usr/share/libretro/autoconfig -type f -name '*.cfg' | xargs -d '\n' sed -i '/input_menu_toggle_btn/d'
@@ -326,5 +331,4 @@ postinstallhook() {
 
 	# force -steamdeck option in desktop mode to prevent constant steam updates
 	sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /usr/share/applications/steam.desktop
-
 }
