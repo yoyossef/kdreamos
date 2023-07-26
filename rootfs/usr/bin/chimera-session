@@ -3,7 +3,7 @@
 DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 SESSION_CONFIG="${CONFIG_HOME}/environment.d/01-chimera-session.conf"
-SESSION_LIGHTDM_CONFIG="/etc/lightdm/lightdm.conf.d/10-chimeraos-session.conf"
+SESSION_SDDM_CONFIG="/etc/sddm.conf.d/10-chimeraos-session.conf"
 SESSION_LIST=('desktop' 'desktop-xorg' 'gamepadui' 'opengamepadui' 'gamepadui-with-qam')
 SELECTED_SESSION="$1"
 
@@ -13,23 +13,23 @@ mkdir -p "${CONFIG_HOME}/environment.d"
 function print_session_list() {
 	# detect active session
 	CURRENT_SESSION="unknown"
-	if grep "gnome" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+	if grep "plasmawayland" ${SESSION_SDDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="desktop"
 	fi
 
-	if grep "gnome-xorg" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+	if grep "plasma" ${SESSION_SDDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="desktop-xorg"
 	fi
 
-	if grep "gamescope-session" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+	if grep "gamescope-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="gamepadui"
 	fi
 
-	if grep "opengamepadui-session" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+	if grep "opengamepadui-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="opengamepadui"
 	fi
 
-	if grep "gamepadui-with-qam-session" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+	if grep "gamepadui-with-qam-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="gamepadui-with-qam"
 	fi
 
@@ -53,34 +53,34 @@ function desktop() {
 	clean_steam_shortcuts
 
 	# switch to Desktop
-	sudo chimera-session-use-lightdm gnome-wayland
+	sudo chimera-session-use-sddm plasmawayland
 }
 
 function desktop_xorg() {
 	clean_steam_shortcuts
 
 	# switch to Desktop (Xorg)
-	sudo chimera-session-use-lightdm gnome-xorg
+	sudo chimera-session-use-sddm plasma
 }
 
 function gamepadui() {
 	# switch to Gamepad/Deck UI (Gamescope/Wayland)
 	echo '' > ${SESSION_CONFIG}
-	sudo chimera-session-use-lightdm gamescope-session
+	sudo chimera-session-use-sddm gamescope-session
 	sudo systemctl enable --now handycon
 }
 
 function opengamepadui() {
 	# switch to Gamepad/Deck UI (Gamescope/Wayland)
 	echo '' > ${SESSION_CONFIG}
-	sudo chimera-session-use-lightdm opengamepadui-session
+	sudo chimera-session-use-sddm opengamepadui-session
 	sudo systemctl disable --now handycon
 }
 
 function gamepaduiqam() {
 	# switch to OpenGamepadUI (Gamescope/Wayland)
 	echo '' > ${SESSION_CONFIG}
-	sudo chimera-session-use-lightdm gamepadui-with-qam-session
+	sudo chimera-session-use-sddm gamepadui-with-qam-session
 	sudo systemctl disable --now handycon
 }
 

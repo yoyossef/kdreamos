@@ -4,12 +4,12 @@ set -e
 
 die() { echo >&2 "!! $*"; exit 1; }
 
-CONF_FILE="/etc/lightdm/lightdm.conf.d/10-chimeraos-session.conf"
+CONF_FILE="/etc/sddm.conf.d/10-chimeraos-session.conf"
 SENTINEL_FILE="steamos-session-select"
 RETURN_SESSION_FILE="chimeraos-session-return"
 
 # For sanity this shipped file must be present, to ensure we're still on a normal-looking Chimeraos setup.
-CHECK_FILE="/etc/lightdm/lightdm.conf.d/10-chimeraos-session.conf"
+CHECK_FILE="/etc/sddm.conf.d/10-chimeraos-session.conf"
 
 session="${1:-gamescope}"
 session_type="wayland"
@@ -60,13 +60,13 @@ fi
 # We use "plasma" as "desktop" to hook up to SteamOS's scripts
 case "$session" in
   plasma-wayland-persistent)
-    session_launcher="gnome-session"
+    session_launcher="plasmawayland"
   ;;
   plasma-x11-persistent)
-    session_launcher="gnome-session"
+    session_launcher="plasma"
   ;;
   desktop|plasma)
-    session_launcher="gnome-session-oneshot"
+    session_launcher="plasma-session-oneshot"
     create_sentinel=1
   ;;
   opengamepadui|opengamepadui-session)
@@ -96,12 +96,12 @@ if [[ $EUID != 0 ]]; then
 fi
 
 {
-  echo "[Seat:*]"
-  echo "autologin-session=$session_launcher"
+  echo "[Autologin]"
+  echo "Session=$session_launcher"
 } > "$CONF_FILE"
 
 echo "Updated system autologin session to $session_launcher"
-systemctl reset-failed lightdm
-systemctl restart lightdm
-echo "Restarted LightDM"
+systemctl reset-failed sddm
+systemctl restart sddm
+echo "Restarted SDDM"
 
