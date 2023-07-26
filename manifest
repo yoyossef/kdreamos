@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export VERSION="43-2"
+export VERSION="43"
 export SYSTEM_DESC="KhimeraOS"
 export SYSTEM_NAME="khimeraos"
 export USERNAME="gamer"
