@@ -116,6 +116,7 @@ export PACKAGES="\
 	pulsemixer \
 	python \
 	python-inotify-simple \
+	realtime-privileges \
 	retroarch \
 	rsync \
 	smbclient \
