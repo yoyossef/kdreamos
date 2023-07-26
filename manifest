@@ -118,6 +118,7 @@ export PACKAGES="\
 	unzip \
 	usb_modeswitch \
 	usbutils \
+	
 	vim \
 	vulkan-icd-loader \
 	vulkan-radeon \
