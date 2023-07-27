@@ -1,4 +1,4 @@
-name: Create Stable Plama Branch
+name: Create Stable Plasma Branch
 
 on:
   workflow_dispatch:
