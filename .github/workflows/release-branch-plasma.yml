@@ -1,11 +1,11 @@
-name: Create Stable Branch - plasma
+name: Create Stable Plama Branch
 
 on:
   workflow_dispatch:
 
 jobs:
   createstable-plasma:
-    name: Create stable branch - plasma
+    name: Create stable Plasma branch
     runs-on: ubuntu-latest
 
     steps:
@@ -14,7 +14,7 @@ jobs:
         id: set-version
         run: |
           source ./manifest ; echo "version=$(echo ${VERSION})" >> $GITHUB_OUTPUT
-      - name: Create stable branch
+      - name: Create stable Plasma branch
         run: git checkout -b stable-plasma-${{ steps.set-version.outputs.version }}
       - name: Initialize mandatory git config
         run: |
