@@ -93,5 +93,5 @@ jobs:
       - build-docker-image
       - aur-pkgbuild
       - pkgbuild
-    name: Build ChimeraOS STABLE image
+    name: Build KhimeraOS STABLE image
     uses: ./.github/workflows/build-system-image.yml
