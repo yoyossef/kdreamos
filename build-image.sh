@@ -47,6 +47,9 @@ mkfs.btrfs -f ${BUILD_IMG}
 mount -t btrfs -o loop,nodatacow ${BUILD_IMG} ${MOUNT_PATH}
 btrfs subvolume create ${BUILD_PATH}
 
+# copy the makepkg.conf into chroot
+cp /etc/makepkg.conf rootfs/etc/makepkg.conf
+
 # bootstrap using our configuration
 pacstrap -K -C rootfs/etc/pacman.conf ${BUILD_PATH}
 
@@ -205,10 +208,6 @@ rm -rf ${FILES_TO_DELETE}
 mkdir /home
 mkdir /var
 mkdir /frzr_root
-
-# Add return-session link for default session
-mkdir -p /home/${USERNAME}/.local/share/applications/
-ln -s /usr/share/return-sessions/org.chimeraos.gamescope.desktop /home/${USERNAME}/.local/share/applications/session-return.desktop
 EOF
 
 # copy files into chroot again
