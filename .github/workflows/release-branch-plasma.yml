@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  createstable-plasma:
+  createstable:
     name: Create stable branch - plasma
     runs-on: ubuntu-latest
 
