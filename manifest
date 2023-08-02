@@ -199,6 +199,7 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	downgrade \
 	frzr \
+	firefox-pwa \
 	gamescope-plus \
 	gamescope-session-git \
 	handygccs-git \
