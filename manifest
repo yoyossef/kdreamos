@@ -63,7 +63,6 @@ export PACKAGES="\
 	kdf \
 	kdialog \
 	keepassxc \
-	kimagemapeditor \
 	kio-extras \
 	kio-zeroconf \
 	kgpg \
@@ -114,8 +113,6 @@ export PACKAGES="\
 	liquidctl \
 	logrotate \
 	lshw \
-	mesa-demos \
-	modemmanager \
 	nano \
 	networkmanager \
 	nfs-utils \
@@ -202,8 +199,6 @@ export AUR_PACKAGES="\
 	firefox-pwa \
 	gamescope-plus \
 	gamescope-session-git \
-	handygccs-git \
-	hhfc-git \
 	legendary \
 	lib32-gamescope-plus \
 	lib32-vkbasalt \
@@ -234,7 +229,6 @@ export SERVICES="\
 	chimera-proxy.service \
 	chimera-proxy.socket \
 	fstrim.timer \
-	handycon \
 	haveged \
 	sddm \
 	sshd \
