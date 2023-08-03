@@ -219,7 +219,6 @@ export AUR_PACKAGES="\
 	pikaur \
 	python-vdf \
 	retroarch-autoconfig-udev-git \
-	ryzenadj-git \
 	steam-removable-media-git \
 	sweet-cursors-theme-git \
 	vkbasalt \
