@@ -4,7 +4,7 @@ DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 SESSION_CONFIG="${CONFIG_HOME}/environment.d/01-chimera-session.conf"
 SESSION_SDDM_CONFIG="/etc/sddm.conf.d/10-chimeraos-session.conf"
-SESSION_LIST=('desktop' 'desktop-xorg' 'gamepadui' 'opengamepadui' 'gamepadui-with-qam')
+SESSION_LIST=('desktop' 'desktop-xorg' 'gamepadui')
 SELECTED_SESSION="$1"
 
 
@@ -23,14 +23,6 @@ function print_session_list() {
 
 	if grep "gamescope-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="gamepadui"
-	fi
-
-	if grep "opengamepadui-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
-		CURRENT_SESSION="opengamepadui"
-	fi
-
-	if grep "gamepadui-with-qam-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
-		CURRENT_SESSION="gamepadui-with-qam"
 	fi
 
 
@@ -70,20 +62,6 @@ function gamepadui() {
 	sudo systemctl enable --now handycon
 }
 
-function opengamepadui() {
-	# switch to Gamepad/Deck UI (Gamescope/Wayland)
-	echo '' > ${SESSION_CONFIG}
-	sudo chimera-session-use-sddm opengamepadui-session
-	sudo systemctl disable --now handycon
-}
-
-function gamepaduiqam() {
-	# switch to OpenGamepadUI (Gamescope/Wayland)
-	echo '' > ${SESSION_CONFIG}
-	sudo chimera-session-use-sddm gamepadui-with-qam-session
-	sudo systemctl disable --now handycon
-}
-
 function print_invalid_session() {
 	echo "Unknown or invalid session type: ${SELECTED_SESSION}"
 	echo
@@ -115,10 +93,4 @@ elif [ "${SELECTED_SESSION}" = "desktop-xorg" ]; then
 elif [ "${SELECTED_SESSION}" = "gamepadui" ]; then
 	echo "Switching to gamepadui"
 	gamepadui
-elif [ "${SELECTED_SESSION}" = "opengamepadui" ]; then
-	echo "Switching to opengamepadui"
-	opengamepadui
-elif [ "${SELECTED_SESSION}" = "gamepadui-with-qam" ]; then
-	echo "Switching to gamepadui with opengamepadui quick access menu"
-	gamepaduiqam
 fi
