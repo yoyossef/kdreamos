@@ -59,7 +59,6 @@ function gamepadui() {
 	# switch to Gamepad/Deck UI (Gamescope/Wayland)
 	echo '' > ${SESSION_CONFIG}
 	sudo chimera-session-use-sddm gamescope-session
-	sudo systemctl enable --now handycon
 }
 
 function print_invalid_session() {
