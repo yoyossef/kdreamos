@@ -115,6 +115,7 @@ export PACKAGES="\
 	lshw \
 	nano \
 	networkmanager \
+	networkmanager-openvpn \
 	nfs-utils \
 	noise-suppression-for-voice \
 	noto-fonts-emoji \
