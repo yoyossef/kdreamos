@@ -4,7 +4,7 @@ DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 SESSION_CONFIG="${CONFIG_HOME}/environment.d/01-chimera-session.conf"
 SESSION_SDDM_CONFIG="/etc/sddm.conf.d/10-chimeraos-session.conf"
-SESSION_LIST=('desktop' 'desktop-xorg' 'gamepadui')
+SESSION_LIST=('desktop' 'desktop-wayland' 'gamepadui')
 SELECTED_SESSION="$1"
 
 
@@ -14,11 +14,11 @@ function print_session_list() {
 	# detect active session
 	CURRENT_SESSION="unknown"
 	if grep "plasmawayland" ${SESSION_SDDM_CONFIG} &> /dev/null; then
-		CURRENT_SESSION="desktop"
+		CURRENT_SESSION="desktop-wayland"
 	fi
 
 	if grep "plasma" ${SESSION_SDDM_CONFIG} &> /dev/null; then
-		CURRENT_SESSION="desktop-xorg"
+		CURRENT_SESSION="desktop"
 	fi
 
 	if grep "gamescope-session" ${SESSION_SDDM_CONFIG} &> /dev/null; then
@@ -45,14 +45,14 @@ function desktop() {
 	clean_steam_shortcuts
 
 	# switch to Desktop
-	sudo chimera-session-use-sddm plasmawayland
+	sudo chimera-session-use-sddm plasma
 }
 
-function desktop_xorg() {
+function desktop_wayland() {
 	clean_steam_shortcuts
 
-	# switch to Desktop (Xorg)
-	sudo chimera-session-use-sddm plasma
+	# switch to Desktop (Wayland)
+	sudo chimera-session-use-sddm plasmawayland
 }
 
 function gamepadui() {
@@ -86,9 +86,9 @@ fi
 if [ "${SELECTED_SESSION}" = "desktop" ]; then
 	echo "Switching to desktop"
 	desktop
-elif [ "${SELECTED_SESSION}" = "desktop-xorg" ]; then
-	echo "Switching to desktop-xorg"
-	desktop_xorg
+elif [ "${SELECTED_SESSION}" = "desktop-wayland" ]; then
+	echo "Switching to desktop-wayland"
+	desktop_wayland
 elif [ "${SELECTED_SESSION}" = "gamepadui" ]; then
 	echo "Switching to gamepadui"
 	gamepadui
