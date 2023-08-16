@@ -52,7 +52,7 @@ function desktop_wayland() {
 	clean_steam_shortcuts
 
 	# switch to Desktop (Wayland)
-	sudo chimera-session-use-sddm plasmawayland
+	sudo chimera-session-use-sddm plasma
 }
 
 function gamepadui() {
