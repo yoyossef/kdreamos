@@ -168,9 +168,6 @@ export PACKAGES="\
 	xdg-user-dirs \
 	xf86-video-amdgpu \
 	xorg-server \
-	yakuake \
-	zsh \
-	zsh-completions \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -266,9 +263,6 @@ postinstallhook() {
 
 	# Set Sweet-cursors and BeautyLine as default
 	sed 's/Inherits=Adwaita/Inherits=Sweet-cursors,BeautyLine,breeze/' -i /usr/share/icons/default/index.theme
-
-	# Set zsh as default shell
-	chsh -s /usr/bin/zsh $USERNAME
 
 	# link ksshaskpass
 	ln -sv /usr/bin/ksshaskpass /usr/bin/ssh-askpass
