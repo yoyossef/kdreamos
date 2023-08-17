@@ -12,7 +12,7 @@ RETURN_SESSION_FILE="chimeraos-session-return"
 CHECK_FILE="/etc/sddm.conf.d/10-chimeraos-session.conf"
 
 session="${1:-gamescope}"
-session_type="wayland"
+session_type="x11"
 
 session_launcher="gamescope-session"
 create_sentinel=""
@@ -20,6 +20,11 @@ create_sentinel=""
 if [[ "$2" == "--sentinel-created" ]]; then
   SENTINEL_CREATED=1
   session_type="wayland"
+  if [[ "$3" == "x11" ]]; then
+    session_type="x11"
+  elif [[ "$3" == "wayland" ]]; then
+    session_type="wayland"
+  fi
 fi
 
 # Update config sentinel
@@ -35,7 +40,7 @@ if [[ -z $SENTINEL_CREATED ]]; then
     if [[ -f "steamos-session-type" ]]; then
       cp steamos-session-type "$SENTINEL_FILE"
     else
-      echo "wayland" > "$SENTINEL_FILE"
+      echo "x11" > "$SENTINEL_FILE"
     fi
     cat "$SENTINEL_FILE"
   )

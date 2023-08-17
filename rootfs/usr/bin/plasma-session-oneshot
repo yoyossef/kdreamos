@@ -5,6 +5,7 @@ set -e
 die() { echo >&2 "!! $*"; exit 1; }
 
 SENTINEL_FILE="steamos-session-select"
+SENTINEL_VALUE="x11"
 RETURN_SESSION_FILE="chimeraos-session-return"
 
 # If we proceed, execute this
@@ -56,6 +57,8 @@ function check_sentinel()
     sentinel_value="$(cat "$SENTINEL_FILE")"
     if [[ "$sentinel_value" == "wayland" ]]; then
       echo "/usr/bin/startplasma-wayland"
+    elif [[ "$sentinel_value" == "x11" ]]; then
+      echo "/usr/bin/startplasma-x11"
     else
       return 1
     fi
