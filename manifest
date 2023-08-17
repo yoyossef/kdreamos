@@ -208,13 +208,13 @@ export AUR_PACKAGES="\
 	libretro-virtualjaguar-git \
 	lightly-boehs-git \
 	nintendo-udev \
-	pikaur \
 	python-vdf \
 	retroarch-autoconfig-udev-git \
 	steam-removable-media-git \
 	sweet-cursors-theme-git \
 	vkbasalt \
 	wyvern \
+	yay \
 	zenergy-dkms-git \
 "
 
