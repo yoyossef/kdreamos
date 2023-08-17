@@ -60,7 +60,7 @@ fi
 # We use "plasma" as "desktop" to hook up to SteamOS's scripts
 case "$session" in
   plasma-wayland-persistent)
-    session_launcher="plasma"
+    session_launcher="plasmawayland"
   ;;
   plasma-x11-persistent)
     session_launcher="plasma"

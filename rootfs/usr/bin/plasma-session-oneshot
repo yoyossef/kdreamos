@@ -55,7 +55,7 @@ function check_sentinel()
     cd "$config_dir"
     sentinel_value="$(cat "$SENTINEL_FILE")"
     if [[ "$sentinel_value" == "wayland" ]]; then
-      echo "/usr/bin/startplasma-x11"
+      echo "/usr/bin/startplasma-wayland"
     else
       return 1
     fi
