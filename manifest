@@ -92,22 +92,6 @@ export PACKAGES="\
 	lib32-vulkan-icd-loader \
 	libcurl-gnutls \
 	libidn11 \
-	libretro-beetle-pce-fast \
-	libretro-beetle-psx-hw \
-	libretro-citra \
-	libretro-desmume \
-	libretro-dolphin \
-	libretro-flycast \
-	libretro-genesis-plus-gx \
-	libretro-kronos \
-	libretro-mame \
-	libretro-mesen-s \
-	libretro-mgba \
-	libretro-mupen64plus-next \
-	libretro-nestopia \
-	libretro-picodrive \
-	libretro-ppsspp \
-	libretro-snes9x \
 	libxcrypt-compat \
 	libxss \
 	liquidctl \
@@ -173,7 +157,6 @@ export PACKAGES="\
 export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.4.9-chos1-1/linux-chimeraos-6.4.9.chos1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.4.9-chos1-1/linux-chimeraos-headers-6.4.9.chos1-1-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-libva-mesa-driver-23.1.5.chos1-1-x86_64.pkg.tar.zst\
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-mesa-23.1.5.chos1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-mesa-vdpau-23.1.5.chos1-1-x86_64.pkg.tar.zst \
@@ -189,8 +172,6 @@ export PACKAGE_OVERRIDES="\
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
 	beautyline \
-	asus-cirrus-firmware-git \
-	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
@@ -201,11 +182,6 @@ export AUR_PACKAGES="\
 	legendary \
 	lib32-gamescope-plus \
 	lib32-vkbasalt \
-	libretro-dosbox-pure-git \
-	libretro-opera-git \
-	libretro-prosystem-git \
-	libretro-stella2014-git \
-	libretro-virtualjaguar-git \
 	lightly-boehs-git \
 	nintendo-udev \
 	python-vdf \
@@ -245,9 +221,6 @@ export FILES_TO_DELETE="\
 	/usr/share/doc \
 	/usr/share/gtk-doc \
 	/usr/share/help \
-	/usr/share/libretro/autoconfig/udev/Gasia_PS_Gamepad_USB.cfg \
-	/usr/share/libretro/autoconfig/udev/Sony-PlayStation3-DualShock3-Controller-Bluetooth.cfg \
-	/usr/share/libretro/autoconfig/udev/Xbox_360_Wireless_Receiver_Chinese01.cfg \
 	/usr/share/man \
 "
 
@@ -266,9 +239,6 @@ postinstallhook() {
 
 	# link ksshaskpass
 	ln -sv /usr/bin/ksshaskpass /usr/bin/ssh-askpass
-
-	# disable retroarch menu in joypad configs
-	find /usr/share/libretro/autoconfig -type f -name '*.cfg' | xargs -d '\n' sed -i '/input_menu_toggle_btn/d'
 
 	# download and add racing wheel udev rules
 	pushd /usr/lib/udev/rules.d
