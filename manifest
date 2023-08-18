@@ -94,7 +94,6 @@ export PACKAGES="\
 	libidn11 \
 	libxcrypt-compat \
 	libxss \
-	linux-firmware \
 	liquidctl \
 	logrotate \
 	lshw \
