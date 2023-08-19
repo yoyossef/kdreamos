@@ -157,14 +157,14 @@ export PACKAGES="\
 export PACKAGE_OVERRIDES="\
 	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/linux-neptune-61-6.1.43.valve1-1-x86_64.pkg.tar.zst \
 	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/linux-neptune-61-headers-6.1.43.valve1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-libva-mesa-driver-23.1.5.chos1-1-x86_64.pkg.tar.zst\
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-mesa-23.1.5.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-mesa-vdpau-23.1.5.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/lib32-vulkan-radeon-23.1.5.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/libva-mesa-driver-23.1.5.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/mesa-23.1.5.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/mesa-vdpau-23.1.5.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.5-chos1-1/vulkan-radeon-23.1.5.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/lib32-libva-mesa-driver-23.1.6.chos1-1-x86_64.pkg.tar.zst\
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/lib32-mesa-23.1.6.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/lib32-mesa-vdpau-23.1.6.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/lib32-vulkan-radeon-23.1.6.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/libva-mesa-driver-23.1.6.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/mesa-23.1.6.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/mesa-vdpau-23.1.6.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-1/vulkan-radeon-23.1.6.chos1-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -176,9 +176,8 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	downgrade \
 	frzr \
-	gamescope-plus \
+	gamescope-git \
 	legendary \
-	lib32-gamescope-plus \
 	lib32-vkbasalt \
 	lightly-boehs-git \
 	nintendo-udev \
