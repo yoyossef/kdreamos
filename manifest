@@ -176,7 +176,6 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	downgrade \
 	frzr \
-	firefox-pwa \
 	gamescope-plus \
 	legendary \
 	lib32-gamescope-plus \

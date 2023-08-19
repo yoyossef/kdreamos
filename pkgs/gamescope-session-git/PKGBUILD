@@ -10,7 +10,7 @@ url="https://github.com/yoyossef/gamescope-session"
 license=('MIT')
 conflicts=('steamos-compositor-plus')
 groups=()
-depends=('gamescope')
+depends=()
 optdepends=('chimera: for steam-tweaks integration'
             'frzr: chimeraos update system')
 makedepends=('git')
