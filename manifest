@@ -175,6 +175,7 @@ export AUR_PACKAGES="\
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
+	dwarfs-bin \
 	frzr \
 	gamescope-git \
 	legendary \
