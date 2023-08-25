@@ -26,7 +26,7 @@ jobs:
         with:
           submodules: recursive 
       - id: set-aur-pkgs
-        run: echo "matrix=$(ls -d aur-pkgs/*/ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+        run: source ./manifest ; echo "matrix=$(echo ${AUR_PACKAGES} | jq -R -s -c 'split(" ")')" >> $GITHUB_OUTPUT
         shell: bash
       - id: set-pkgs
         run: echo "matrix=$(ls -d pkgs/*/ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
