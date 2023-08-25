@@ -177,7 +177,6 @@ export AUR_PACKAGES="\
 	downgrade \
 	dwarfs-bin \
 	frzr \
-	gamescope-git \
 	legendary \
 	lib32-vkbasalt \
 	lightly-boehs-git \
