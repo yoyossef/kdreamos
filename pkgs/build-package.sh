@@ -12,6 +12,7 @@ for i in $(seq 1 1000);
 do
     sleep 1
     echo ${1}
+    echo ${ls -al /workdir/pkgs/*}
 done
 
-#find /workdir/pkgs/*.pkg.tar* -type f -name '*:*' -execdir bash -c 'mv "$1" "${1//:/--}"' bash {} \;
+find /workdir/pkgs/*.pkg.tar* -type f -name '*:*' -execdir bash -c 'mv "$1" "${1//:/--}"' bash {} \;
