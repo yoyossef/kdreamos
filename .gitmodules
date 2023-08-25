@@ -1,0 +1,57 @@
+[submodule "aur-pkgs/beautyline"]
+	path = aur-pkgs/beautyline
+	url = https://aur.archlinux.org/beautyline.git
+[submodule "aur-pkgs/chimera"]
+	path = aur-pkgs/chimera
+	url = https://aur.archlinux.org/chimera.git
+[submodule "aur-pkgs/chimeraos-device-quirks-git"]
+	path = aur-pkgs/chimeraos-device-quirks-git
+	url = https://aur.archlinux.org/chimeraos-device-quirks-git.git
+[submodule "aur-pkgs/downgrade"]
+	path = aur-pkgs/downgrade
+	url = https://aur.archlinux.org/downgrade.git
+[submodule "aur-pkgs/dwarfs-bin"]
+	path = aur-pkgs/dwarfs-bin
+	url = https://aur.archlinux.org/dwarfs-bin.git
+[submodule "aur-pkgs/frzr"]
+	path = aur-pkgs/frzr
+	url = https://aur.archlinux.org/frzr.git
+[submodule "aur-pkgs/gamescope-git"]
+	path = aur-pkgs/gamescope-git
+	url = https://aur.archlinux.org/gamescope-git.git
+[submodule "aur-pkgs/legendary"]
+	path = aur-pkgs/legendary
+	url = https://aur.archlinux.org/legendary.git
+[submodule "aur-pkgs/lib32-vkbasalt"]
+	path = aur-pkgs/lib32-vkbasalt
+	url = https://aur.archlinux.org/lib32-vkbasalt.git
+[submodule "aur-pkgs/lightly-boehs-git"]
+	path = aur-pkgs/lightly-boehs-git
+	url = https://aur.archlinux.org/lightly-boehs-git.git
+[submodule "aur-pkgs/nintendo-udev"]
+	path = aur-pkgs/nintendo-udev
+	url = https://aur.archlinux.org/nintendo-udev.git
+[submodule "aur-pkgs/pikaur"]
+	path = aur-pkgs/pikaur
+	url = https://aur.archlinux.org/pikaur.git
+[submodule "aur-pkgs/python-vdf"]
+	path = aur-pkgs/python-vdf
+	url = https://aur.archlinux.org/python-vdf.git
+[submodule "aur-pkgs/retroarch-autoconfig-udev-git"]
+	path = aur-pkgs/retroarch-autoconfig-udev-git
+	url = https://aur.archlinux.org/retroarch-autoconfig-udev-git.git
+[submodule "aur-pkgs/steam-removable-media-git"]
+	path = aur-pkgs/steam-removable-media-git
+	url = https://aur.archlinux.org/steam-removable-media-git.git
+[submodule "aur-pkgs/sweet-cursors-theme-git"]
+	path = aur-pkgs/sweet-cursors-theme-git
+	url = https://aur.archlinux.org/sweet-cursors-theme-git.git
+[submodule "aur-pkgs/vkbasalt"]
+	path = aur-pkgs/vkbasalt
+	url = https://aur.archlinux.org/vkbasalt.git
+[submodule "aur-pkgs/wyvern"]
+	path = aur-pkgs/wyvern
+	url = https://aur.archlinux.org/wyvern.git
+[submodule "aur-pkgs/zenergy-dkms-git"]
+	path = aur-pkgs/zenergy-dkms-git
+	url = https://aur.archlinux.org/zenergy-dkms-git.git
