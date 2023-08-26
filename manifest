@@ -196,8 +196,6 @@ export SERVICES="\
 	avahi-daemon \
 	bluetooth \
 	bluetooth-workaround \
-	chimera-proxy.service \
-	chimera-proxy.socket \
 	fstrim.timer \
 	haveged \
 	sddm \
