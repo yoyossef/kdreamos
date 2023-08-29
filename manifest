@@ -51,7 +51,6 @@ export PACKAGES="\
 	k3b \
 	kaddressbook \
 	kalarm \
-	kalendar \
 	kate \
 	kcharselect \
 	kdeconnect \
@@ -97,6 +96,7 @@ export PACKAGES="\
 	liquidctl \
 	logrotate \
 	lshw \
+	merkuro \
 	nano \
 	networkmanager \
 	networkmanager-openvpn \
@@ -271,7 +271,6 @@ postinstallhook() {
 	grep -v org.kde.dragonplayer.desktop | \
 	grep -v org.kde.kaddressbook.desktop | \
 	grep -v org.kde.kalarm.desktop | \
-	grep -v org.kde.kalendar.desktop | \
 	grep -v org.kde.kate.desktop | \
 	grep -v org.kde.kcharselect.desktop | \
 	grep -v org.kde.kgpg.desktop | \
@@ -284,6 +283,7 @@ postinstallhook() {
 	grep -v org.kde.kwalletmanager5.desktop | \
 	grep -v org.kde.kwikdisk.desktop | \
 	grep -v org.kde.kwrite.desktop | \
+	grep -v org.kde.merkuro.desktop | \
 	grep -v org.kde.partitionmanager.desktop | \
 	grep -v org.kde.plasma-systemmonitor.desktop | \
 	grep -v org.kde.plasma.cuttlefish.desktop | \
