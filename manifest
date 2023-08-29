@@ -121,7 +121,6 @@ export PACKAGES="\
 	python \
 	python-inotify-simple \
 	realtime-privileges \
-	retroarch \
 	rsync \
 	smbclient \
 	sof-firmware \
@@ -181,7 +180,6 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	pikaur \
 	python-vdf \
-	retroarch-autoconfig-udev-git \
 	steam-removable-media-git \
 	sweet-cursors-theme-git \
 	vkbasalt \
