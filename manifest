@@ -8,7 +8,7 @@ export SIZE="10000MB"
 export ARCHIVE_DATE=$(date -d 'yesterday' +%Y/%m/%d)
 export WEBSITE="https://chimeraos.org"
 export DOCUMENTATION_URL="https://chimeraos.org/about"
-export BUG_REPORT_URL="https://github.com/elril0000/khimeraos/issues"
+export BUG_REPORT_URL="https://github.com/yoyossef/kdreamos/issues"
 
 export KERNEL_PACKAGE="linux-neptune-61"
 export KERNEL_PACKAGE_ORIGIN="local"
