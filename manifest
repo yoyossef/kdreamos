@@ -132,7 +132,6 @@ export PACKAGES="\
 	sudo \
 	svgpart \
 	sweeper \
-	telepathy-kde-meta \
 	ttf-liberation \
 	ttf-meslo-nerd \
 	unzip \
