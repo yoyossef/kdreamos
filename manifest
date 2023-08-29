@@ -61,7 +61,6 @@ export PACKAGES="\
 	kde-system-meta \
 	kdf \
 	kdialog \
-	keepassxc \
 	kio-extras \
 	kio-zeroconf \
 	kgpg \
@@ -258,7 +257,6 @@ postinstallhook() {
 	find /usr/share/applications/* | \
 	grep -v org.chimeraos.Gamescope.desktop | \
 	grep -v org.chimeraos.app.desktop | \
-	grep -v org.keepassxc.KeePassXC.desktop | \
 	grep -v breezestyleconfig.desktop | \
 	grep -v kaddressbook-view.desktop | \
 	grep -v kdesystemsettings.desktop | \
