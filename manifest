@@ -99,6 +99,7 @@ export PACKAGES="\
 	lib32-libva \
 	lib32-openal \
 	lib32-pipewire \
+	lib32-pipewire-jack \
 	lib32-systemd \
 	lib32-vulkan-icd-loader \
 	libcurl-gnutls \
