@@ -41,11 +41,18 @@ export PACKAGES="\
 	flatpak \
 	fmt \
 	fuse-zip \
+	fuse-overlayfs \
 	fuse2 \
 	fwupd \
 	gamemode \
 	git \
 	gst-plugin-pipewire \
+	gst-plugins-base \
+	gst-plugins-good \
+	gst-plugins-ugly \
+	gst-plugins-bad  \
+	gstreamer-vaapi \
+	gst-libav \
 	haveged \
 	htop \
 	k3b \
@@ -75,12 +82,18 @@ export PACKAGES="\
 	ktimer \
 	kwalletmanager \
 	kweather \
+	lib32-alsa-lib \
+	lib32-alsa-plugins \
 	lib32-curl \
 	lib32-fontconfig \
 	lib32-freetype2 \
 	lib32-gamemode \
+	lib32-gst-plugins-base-libs \
+	lib32-gst-plugins-base \
+	lib32-gst-plugins-good \
 	lib32-libgpg-error \
 	lib32-libnm \
+	lib32-libpulse \
 	lib32-libxinerama \
 	lib32-libxcrypt-compat \
 	lib32-libva \
@@ -90,6 +103,7 @@ export PACKAGES="\
 	lib32-vulkan-icd-loader \
 	libcurl-gnutls \
 	libidn11 \
+	libgphoto2 \
 	libxcrypt-compat \
 	libxss \
 	linux-firmware \
@@ -123,6 +137,9 @@ export PACKAGES="\
 	python-inotify-simple \
 	realtime-privileges \
 	rsync \
+	rumpowered/dwarfs \
+	rumpowered/bindtointerface \
+	rumpowered/lib32-bindtointerface \
 	smbclient \
 	sof-firmware \
 	spectacle \
@@ -150,6 +167,8 @@ export PACKAGES="\
 	xdg-user-dirs \
 	xf86-video-amdgpu \
 	xorg-server \
+	wine-staging \
+	wine-mono \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -175,7 +194,6 @@ export AUR_PACKAGES="\
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
-	dwarfs-bin \
 	frzr \
 	legendary \
 	lib32-vkbasalt \

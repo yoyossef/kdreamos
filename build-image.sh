@@ -88,6 +88,9 @@ locale-gen
 # Disable parallel downloads
 sed -i '/ParallelDownloads/s/^/#/g' /etc/pacman.conf
 
+pacman-key --recv-keys cc7a2968b28a04b3
+pacman-key --lsign-key cc7a2968b28a04b3
+
 # update package databases
 pacman --noconfirm -Syy
 
