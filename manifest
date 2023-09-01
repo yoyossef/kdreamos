@@ -137,9 +137,6 @@ export PACKAGES="\
 	python-inotify-simple \
 	realtime-privileges \
 	rsync \
-	rumpowered/dwarfs \
-	rumpowered/bindtointerface \
-	rumpowered/lib32-bindtointerface \
 	smbclient \
 	sof-firmware \
 	spectacle \
@@ -184,6 +181,9 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/mesa-vdpau-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/vulkan-intel-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/vulkan-radeon-23.1.6.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/jc141x/rumpowered-packages/raw/master/x86_64/bindtointerface-4b03914-2-x86_64.pkg.tar.zst \
+	https://github.com/jc141x/rumpowered-packages/raw/master/x86_64/lib32-bindtointerface-4b03914-2-x86_64.pkg.tar.zst \
+	https://github.com/jc141x/rumpowered-packages/raw/master/x86_64/dwarfs-0.7.2-2-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
