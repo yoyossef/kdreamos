@@ -15,7 +15,7 @@ arch=('any')
 makedepends=('git')
 options=(!strip)
 #branch=main
-source=("${pkgbase}::git+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git?signed")
+source=("${pkgbase}::git+https://github.com/yoyossef/linux-firmware.git")
 sha256sums=('SKIP')
 validpgpkeys=('4CDE8575E547BF835FE15807A31B6BD72486CFD6') # Josh Boyer <jwboyer@fedoraproject.org>
 
