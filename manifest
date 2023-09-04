@@ -107,7 +107,6 @@ export PACKAGES="\
 	libgphoto2 \
 	libxcrypt-compat \
 	libxss \
-	linux-firmware \
 	liquidctl \
 	logrotate \
 	lshw \
