@@ -15,8 +15,6 @@ export KERNEL_PACKAGE_ORIGIN="local"
 
 export PACKAGES="\
 	accountsservice \
-	akonadi-calendar-tools \
-	akonadiconsole \
 	alsa-firmware \
 	alsa-utils \
 	bluez \
@@ -28,11 +26,8 @@ export PACKAGES="\
 	colord-kde \
 	cronie \
 	diffutils \
-	distrobox \
 	dkms \
 	dmidecode \
-	dosbox \
-	dragon \
 	ethtool \
 	evtest \
 	ffmpeg \
@@ -71,17 +66,9 @@ export PACKAGES="\
 	kio-extras \
 	kio-zeroconf \
 	kgpg \
-	kmail \
-	knotes \
 	konsole \
-	kontact \
 	kopete \
-	korganizer \
 	krfb \
-	ksshaskpass \
-	ktimer \
-	kwalletmanager \
-	kweather \
 	lib32-alsa-lib \
 	lib32-alsa-plugins \
 	lib32-curl \
@@ -251,9 +238,6 @@ postinstallhook() {
 
 	# Set Sweet-cursors and BeautyLine as default
 	sed 's/Inherits=Adwaita/Inherits=Sweet-cursors,BeautyLine,breeze/' -i /usr/share/icons/default/index.theme
-
-	# link ksshaskpass
-	ln -sv /usr/bin/ksshaskpass /usr/bin/ssh-askpass
 
 	# download and add racing wheel udev rules
 	pushd /usr/lib/udev/rules.d
