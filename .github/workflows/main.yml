@@ -1,9 +1,3 @@
-name: My build action requiring more space
-on: push
-
-jobs:
-  build:
-
 name: System image build
 
 env:
