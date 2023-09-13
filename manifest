@@ -196,7 +196,7 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	downgrade \
 	frzr \
-	legendary \
+	lib32-gperftools \
 	lib32-vkbasalt \
 	lightly-boehs-git \
 	nintendo-udev \
