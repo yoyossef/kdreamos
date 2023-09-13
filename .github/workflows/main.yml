@@ -16,6 +16,7 @@ jobs:
     uses: ./.github/workflows/build-builder.yml
 
   build-free-space:
+    name: Bla di bla
     runs-on: ubuntu-latest
     steps:
     - name: Build packages
