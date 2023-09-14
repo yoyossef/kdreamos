@@ -141,18 +141,10 @@ export PACKAGES="\
 export PACKAGE_OVERRIDES="\
 	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/linux-neptune-61-6.1.43.valve1-1-x86_64.pkg.tar.zst \
 	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/linux-neptune-61-headers-6.1.43.valve1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.4.11-chos3-1/linux-chimeraos-6.4.11.chos3-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.4.11-chos3-1/linux-chimeraos-headers-6.4.11.chos3-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-libva-mesa-driver-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-mesa-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-mesa-vdpau-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-intel-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-radeon-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/libva-mesa-driver-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/mesa-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/mesa-vdpau-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/vulkan-intel-23.1.7.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/vulkan-radeon-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/lib32-mesa-23.1.3.170235.radeonsi_3.5.1-1-x86_64.pkg.tar.zst \
+	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/lib32-mesa-radv-debug-23.3.0_devel.177466.steamos_23.9.1-1-x86_64.pkg.tar.zst \
+	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/mesa-23.1.3.170235.radeonsi_3.5.1-1-x86_64.pkg.tar.zst \
+	https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/mesa-radv-debug-23.3.0_devel.177466.steamos_23.9.1-1-x86_64.pkg.tar.zst \
 	https://github.com/jc141x/rumpowered-packages/raw/master/x86_64/bindtointerface-4b03914-2-x86_64.pkg.tar.zst \
 	https://github.com/jc141x/rumpowered-packages/raw/master/x86_64/lib32-bindtointerface-4b03914-2-x86_64.pkg.tar.zst \
 	https://github.com/jc141x/rumpowered-packages/raw/master/x86_64/dwarfs-0.7.2-3-x86_64.pkg.tar.zst \
