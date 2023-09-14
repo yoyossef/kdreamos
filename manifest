@@ -51,15 +51,9 @@ export PACKAGES="\
 	haveged \
 	htop \
 	k3b \
-	kaddressbook \
-	kalarm \
-	kate \
-	kcharselect \
 	kdeconnect \
 	kdegraphics-thumbnailers \
 	kdenetwork-filesharing \
-	kdepim-addons \
-	kde-accessibility-meta \
 	kde-system-meta \
 	kdf \
 	kdialog \
@@ -67,7 +61,6 @@ export PACKAGES="\
 	kio-zeroconf \
 	kgpg \
 	konsole \
-	kopete \
 	krfb \
 	lib32-alsa-lib \
 	lib32-alsa-plugins \
@@ -95,15 +88,10 @@ export PACKAGES="\
 	libxcrypt-compat \
 	libxss \
 	linux-firmware \
-	liquidctl \
 	logrotate \
 	lshw \
-	merkuro \
-	nano \
 	networkmanager \
-	networkmanager-openvpn \
 	nfs-utils \
-	noise-suppression-for-voice \
 	noto-fonts-emoji \
 	nss-mdns \
 	openal \
@@ -118,7 +106,6 @@ export PACKAGES="\
 	plasma-wayland-protocols \
 	plasma-wayland-session \
 	plasma5-applets-window-buttons \
-	podman \
 	print-manager \
 	pulsemixer \
 	python \
@@ -127,25 +114,20 @@ export PACKAGES="\
 	rsync \
 	smbclient \
 	sof-firmware \
-	spectacle \
 	sshfs \
 	steam \
 	sudo \
-	svgpart \
-	sweeper \
 	ttf-liberation \
 	ttf-meslo-nerd \
 	unzip \
 	usb_modeswitch \
 	usbutils \
-	vi \
 	vim \
 	vulkan-icd-loader \
 	wavpack \
 	wget \
 	which \
 	wireplumber \
-	wqy-zenhei \
 	xdg-desktop-portal \
 	xdg-desktop-portal-kde \
 	xdg-desktop-portal-wlr \
@@ -186,15 +168,12 @@ export AUR_PACKAGES="\
 	downgrade \
 	frzr \
 	legendary \
-	lib32-vkbasalt \
 	lightly-boehs-git \
 	nintendo-udev \
 	pikaur \
 	python-vdf \
 	steam-removable-media-git \
 	sweet-cursors-theme-git \
-	vkbasalt \
-	wyvern \
 	zenergy-dkms-git \
 "
 
