@@ -54,6 +54,7 @@ export PACKAGES="\
 	kdeconnect \
 	kdegraphics-thumbnailers \
 	kdenetwork-filesharing \
+	kde-accessibility-meta \
 	kde-system-meta \
 	kdf \
 	kdialog \
@@ -93,6 +94,7 @@ export PACKAGES="\
 	networkmanager \
 	nfs-utils \
 	noto-fonts-emoji \
+	noise-suppression-for-voice \
 	nss-mdns \
 	openal \
 	openssh \
@@ -159,7 +161,6 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	downgrade \
 	frzr \
-	legendary \
 	lightly-boehs-git \
 	nintendo-udev \
 	pikaur \

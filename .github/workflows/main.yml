@@ -117,7 +117,7 @@ jobs:
 
   build:
     needs:
-     - remove-shit
+      #- remove-shit
      - build-docker-image
      - aur-pkgbuild
      - pkgbuild
