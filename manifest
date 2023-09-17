@@ -19,11 +19,8 @@ export PACKAGES="\
 	akonadiconsole \
 	alsa-firmware \
 	alsa-utils \
-	bluez \
-	bluez-hid2hci \
-	bluez-plugins \
-	bluez-utils \
 	breeze-icons \
+	broadcom-wl-dkms \
 	cifs-utils \
 	colord-kde \
 	cronie \
