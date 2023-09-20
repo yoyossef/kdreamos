@@ -202,6 +202,7 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	pikaur \
 	python-vdf \
+	sc-controller \
 	steam-removable-media-git \
 	sweet-cursors-theme-git \
 	vkbasalt \
