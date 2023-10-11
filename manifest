@@ -199,7 +199,11 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	pikaur \
 	python-vdf \
+	r8168-dkms \
+	retroarch-autoconfig-udev-git \
+	ryzenadj-git \
 	sc-controller \
+	steam_notif_daemon \
 	steam-removable-media-git \
 	sweet-cursors-theme-git \
 	vkbasalt \
