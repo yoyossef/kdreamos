@@ -5,8 +5,8 @@ RUN echo -e "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.con
     # Cannot check space in chroot
     sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf && \
     pacman-key --init && \
-    pacman --noconfirm -Syyuu && \
-    pacman --noconfirm -S \
+    pacman --noconfirm -Syyuu --disable-download-timeout && \
+    pacman --noconfirm -S --disable-download-timeout \
     arch-install-scripts \
     btrfs-progs \
     fmt \
@@ -22,7 +22,7 @@ RUN echo -e "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.con
     rust \
     sudo \
     && \
-    pacman --noconfirm -S --needed git && \
+    pacman --noconfirm -S --disable-download-timeout --needed git && \
     echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     useradd build -G wheel -m && \
     su - build -c "git clone https://aur.archlinux.org/pikaur.git /tmp/pikaur" && \
@@ -43,7 +43,7 @@ COPY manifest /manifest
 # Freeze packages and overwrite with overrides when needed
 RUN source /manifest && \
     echo "Server=https://archive.archlinux.org/repos/${ARCHIVE_DATE}/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist && \
-    pacman --noconfirm -Syyuu; if [ -n "${PACKAGE_OVERRIDES}" ]; then wget --directory-prefix=/tmp/extra_pkgs ${PACKAGE_OVERRIDES}; pacman --noconfirm -U --overwrite '*' /tmp/extra_pkgs/*; rm -rf /tmp/extra_pkgs; fi
+    pacman --noconfirm -Syyuu --disable-download-timeout; if [ -n "${PACKAGE_OVERRIDES}" ]; then wget --directory-prefix=/tmp/extra_pkgs ${PACKAGE_OVERRIDES}; pacman --noconfirm -U --overwrite '*' /tmp/extra_pkgs/*; rm -rf /tmp/extra_pkgs; fi
 
 USER build
 ENV BUILD_USER "build"

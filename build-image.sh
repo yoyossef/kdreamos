@@ -92,14 +92,14 @@ sed -i '/ParallelDownloads/s/^/#/g' /etc/pacman.conf
 sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
 
 # update package databases
-pacman --noconfirm -Syy
+pacman --noconfirm --disable-download-timeout -Syy
 
 # install kernel package
 if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
 	pacman --noconfirm -U --overwrite '*' \
 	/own_pkgs/${KERNEL_PACKAGE}-*.pkg.tar.zst 
 else
-	pacman --noconfirm -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
+	pacman --noconfirm --disable-download-timeout -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
 fi
 
 # install own override packages
@@ -107,7 +107,7 @@ pacman --noconfirm -U --overwrite '*' /own_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
 # install packages
-pacman --noconfirm -S --overwrite '*' ${PACKAGES}
+pacman --noconfirm --disable-download-timeout -S --overwrite '*' ${PACKAGES}
 rm -rf /var/cache/pacman/pkg
 
 # install AUR packages
