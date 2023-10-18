@@ -11,6 +11,11 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  free-space-for-gods-sake:
+    name: Maximize build disk space
+    uses: easimon/maximize-build-space@v8
+
   build-docker-image:
     name: Build and publish docker container
     uses: ./.github/workflows/build-builder.yml
